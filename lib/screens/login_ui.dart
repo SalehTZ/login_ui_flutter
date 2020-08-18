@@ -3,10 +3,17 @@ import 'package:flutter/services.dart';
 import 'package:login_ui/components/round_btn.dart';
 import 'package:login_ui/components/text_input_field.dart';
 import 'package:login_ui/constants/theme_data.dart';
+import 'package:login_ui/constants/globals.dart' as globals;
+import 'package:login_ui/screens/sign_up_screen.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({Key key}) : super(key: key);
 
+  @override
+  _LoginPageState createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,32 +27,68 @@ class LoginPage extends StatelessWidget {
             color: primaryColorC,
             child: SingleChildScrollView(
               padding: EdgeInsets.only(
-                bottom: 120.0,
+                bottom: 0.0,
               ),
               physics: AlwaysScrollableScrollPhysics(),
               child: Column(
                 children: [
                   SizedBox(
-                    height: 100,
+                    height: 80,
                   ),
                   Text(
                     'Sign In',
-                    style: TextStyle(fontSize: 25, color: textColor),
-                    // style: GoogleFonts.nunito(fontSize: 25),
+                    style: TextStyle(fontSize: 30, color: textColor),
                   ),
                   SizedBox(
-                    height: 40,
+                    height: 15,
+                  ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 50, right: 5, top: 40),
+                      child: Text(
+                        'Email',
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: textColor,
+                        ),
+                      ),
+                    ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: 5, right: 5, top: 40),
-                    child: CustomeTextInput('Username', false, Icons.person),
+                    padding: EdgeInsets.only(left: 5, right: 5, top: 5),
+                    child: Column(
+                      children: [
+                        CustomeTextInput(
+                            'Enter email here', false, Icons.person),
+                      ],
+                    ),
                   ),
                   SizedBox(
-                    height: 30,
+                    height: 15,
+                  ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 50, right: 5, top: 18),
+                      child: Text(
+                        'Password',
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: textColor,
+                        ),
+                      ),
+                    ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: 5, right: 5, top: 18),
-                    child: CustomeTextInput('Password', true, Icons.vpn_key),
+                    padding: EdgeInsets.only(left: 5, right: 5, top: 5),
+                    child: CustomeTextInput(
+                      'Enter password here',
+                      true,
+                      Icons.vpn_key,
+                    ),
                   ),
                   SizedBox(
                     height: 30,
@@ -59,14 +102,18 @@ class LoginPage extends StatelessWidget {
                   ),
                   Text(
                     '- OR -',
-                    style: TextStyle(color: Colors.white, fontSize: 12),
+                    style: TextStyle(color: Colors.white, fontSize: 11),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(right: 0, top: 10),
-                        child: MaterialButton(
+                  Text(
+                    'Sign in with',
+                    style: TextStyle(color: Colors.white, fontSize: 13),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 5),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        MaterialButton(
                           minWidth: 10,
                           color: Colors.white,
                           onPressed: () {},
@@ -77,10 +124,7 @@ class LoginPage extends StatelessWidget {
                           ),
                           shape: CircleBorder(),
                         ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(left: 0, top: 10),
-                        child: MaterialButton(
+                        MaterialButton(
                           minWidth: 10,
                           color: Colors.white,
                           onPressed: () {},
@@ -91,8 +135,42 @@ class LoginPage extends StatelessWidget {
                           ),
                           shape: CircleBorder(),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Don\'t have an account?  ',
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: textColor,
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => SignUpScreen(),
+                              ),
+                            );
+                          },
+                          child: Text(
+                            'Sign Up',
+                            style: TextStyle(
+                              fontSize: 15,
+                              color: textColor,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
