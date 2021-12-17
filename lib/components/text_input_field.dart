@@ -1,25 +1,24 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:login_ui/constants/theme_data.dart';
 import 'package:login_ui/constants/globals.dart' as globals;
 
-class CustomeTextInput extends StatefulWidget {
+class CustomTextInput extends StatefulWidget {
   final int _iD;
   final String _text;
   final IconData _iconData;
   final bool _obsecure;
 
-  const CustomeTextInput(this._iD, this._text, this._obsecure, this._iconData,
+  const CustomTextInput(this._iD, this._text, this._obsecure, this._iconData,
       {Key key})
       : super(key: key);
 
   @override
-  _CustomeTextInputState createState() => _CustomeTextInputState();
+  _CustomTextInputState createState() => _CustomTextInputState();
 }
 
-class _CustomeTextInputState extends State<CustomeTextInput> {
-  String inputedUsername;
-  String inputedPassword;
+class _CustomTextInputState extends State<CustomTextInput> {
+  String inputUsername;
+  String inputPassword;
   bool _passMode;
   bool _obSecure;
 
@@ -49,10 +48,28 @@ class _CustomeTextInputState extends State<CustomeTextInput> {
           borderRadius: BorderRadius.all(Radius.circular(10))),
       child: TextField(
         onChanged: (value) {
-          if (!_passMode)
-            globals.inputUsername = value;
-          else
-            globals.inputPassword = value;
+          if (!_passMode) {
+            switch (widget._iD) {
+              case 1:
+                globals.inputFullName = value;
+                break;
+              case 2:
+                globals.inputPhoneNo = value;
+                break;
+              case 3:
+                globals.inputEmail = value;
+                break;
+            }
+          } else {
+            switch (widget._iD) {
+              case 4:
+                globals.inputPassword = value;
+                break;
+              case 5:
+                globals.inputConfirmPassword = value;
+                break;
+            }
+          }
         },
         obscureText: _obSecure,
         style: TextStyle(color: textColor),

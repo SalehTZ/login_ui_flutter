@@ -56,7 +56,7 @@ class SignUpScreen extends StatelessWidget {
                       padding: EdgeInsets.only(left: 5, right: 5, top: 5),
                       child: Column(
                         children: [
-                          CustomeTextInput(
+                          CustomTextInput(
                             1,
                             'Enter your name',
                             false,
@@ -84,7 +84,7 @@ class SignUpScreen extends StatelessWidget {
                     ),
                     Padding(
                       padding: EdgeInsets.only(left: 5, right: 5, top: 5),
-                      child: CustomeTextInput(
+                      child: CustomTextInput(
                         2,
                         'Enter your Phone No',
                         false,
@@ -112,7 +112,7 @@ class SignUpScreen extends StatelessWidget {
                       padding: EdgeInsets.only(left: 5, right: 5, top: 5),
                       child: Column(
                         children: [
-                          CustomeTextInput(
+                          CustomTextInput(
                             3,
                             'Enter your Email',
                             false,
@@ -142,7 +142,7 @@ class SignUpScreen extends StatelessWidget {
                       padding: EdgeInsets.only(left: 5, right: 5, top: 5),
                       child: Column(
                         children: [
-                          CustomeTextInput(
+                          CustomTextInput(
                             4,
                             'Enter your password',
                             true,
@@ -172,7 +172,7 @@ class SignUpScreen extends StatelessWidget {
                       padding: EdgeInsets.only(left: 5, right: 5, top: 5),
                       child: Column(
                         children: [
-                          CustomeTextInput(
+                          CustomTextInput(
                             5,
                             'Confirm password',
                             true,
@@ -186,7 +186,7 @@ class SignUpScreen extends StatelessWidget {
                     ),
                     Padding(
                       padding: EdgeInsets.only(top: 18),
-                      child: CustomButton('Sign Up'),
+                      child: CustomButton(2, 'Sign Up'),
                     ),
                     SizedBox(
                       height: 15,
