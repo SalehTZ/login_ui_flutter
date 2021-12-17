@@ -3,7 +3,7 @@
 A simple Flutter login ui.
 
 # Sign in screen
-![](screenshots/loginui.gif | width=100)
+![](screenshots/loginui.gif){:height="50%" width="50%"}
 
 # Sign up screen
-![](screenshots/loginui2.gif | width=100)
+![](screenshots/loginui2.gif){:height="50%" width="50%"}
