@@ -60,8 +60,12 @@ class _LoginPageState extends State<LoginPage> {
                     padding: EdgeInsets.only(left: 5, right: 5, top: 5),
                     child: Column(
                       children: [
-                        CustomeTextInput(
-                            'Enter email here', false, Icons.person),
+                        CustomTextInput(
+                          3,
+                          'Enter email here',
+                          false,
+                          Icons.person,
+                        ),
                       ],
                     ),
                   ),
@@ -84,7 +88,8 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   Padding(
                     padding: EdgeInsets.only(left: 5, right: 5, top: 5),
-                    child: CustomeTextInput(
+                    child: CustomTextInput(
+                      4,
                       'Enter password here',
                       true,
                       Icons.vpn_key,
@@ -95,7 +100,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: 20),
-                    child: CustomButton('Login'),
+                    child: CustomButton(1, 'Login'),
                   ),
                   SizedBox(
                     height: 15,
