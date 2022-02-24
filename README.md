@@ -2,8 +2,7 @@
 
 A simple Flutter login ui.
 
-# Sign in screen
-![](screenshots/signin_screen.gif)
-
-# Sign up screen
-![](screenshots/signup_screen.gif)
+# Screnshots
+ | Sign In             |  Sign Up |
+:-------------------------:|:-------------------------:
+![](screenshots/signin_screen.gif) | ![](screenshots/signup_screen.gif)
